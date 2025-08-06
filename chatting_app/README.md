@@ -1,16 +1,88 @@
-# chatting_app
+# Chatting App
 
-A new Flutter project.
+A Flutter-based mobile application for real-time messaging and user authentication.
+
+## Current Features
+
+- User Authentication
+  - User Registration
+  - User Login
+  - Token-based Authentication
+  - Secure Storage for Tokens
+
+## Project Structure
+
+```
+lib/
+├── core/
+│   └── constants/
+│       └── api_constant.dart
+├── features/
+│   └── auth/
+│       ├── data/
+│       │   ├── datasources/
+│       │   │   └── remote_data/
+│       │   │       └── user_remote_data_source_impl.dart
+│       │   └── models/
+│       │       └── user_model.dart
+│       └── domain/
+│           └── entities/
+│               └── user.dart
+└── test/
+    └── features/
+        └── auth/
+            └── data/
+                └── datasources/
+                    └── remote_data/
+                        └── user_remote_data_source_impl_test.dart
+```
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### 🛠️ Prerequisites
 
-A few resources to get you started if this is your first Flutter project:
+- ⚙️ Flutter SDK (latest stable version)
+- 🎯 Dart SDK (included with Flutter)
+- 📱 Android Studio / Xcode (for emulator/simulator)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### 🚀 Installation
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. 📥 Clone the repository
+   ```bash
+   git clone https://github.com/yourusername/chatting-app.git
+   cd chatting-app
+   ```
+
+2. 📦 Install dependencies:
+   ```bash
+   flutter pub get
+   ```
+
+3. 🔄 Run the app:
+   ```bash
+   # For Android
+   flutter run -d <device_id>
+   
+   # For iOS
+   cd ios && pod install && cd ..
+   flutter run
+   ```
+
+4. ✅ Verify the setup:
+   ```bash
+   flutter doctor
+   ```
+
+## Testing
+
+Run tests using:
+```bash
+flutter test
+```
+
+## Dependencies
+
+- http: ^1.1.0
+- flutter_secure_storage: ^9.2.4
+- mockito: ^5.4.4 (dev dependency)
+- build_runner: ^2.4.8 (dev dependency)
