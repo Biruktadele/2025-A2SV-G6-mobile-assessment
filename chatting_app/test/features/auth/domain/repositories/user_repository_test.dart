@@ -12,6 +12,7 @@ void main() {
 
   // Test user data
   final User tUser = const User(
+    id: '1',
     name: 'Test User',
     email: 'test@example.com',
     password: 'password123',
@@ -24,9 +25,7 @@ void main() {
   group('registerUser', () {
     test('should return User when registration is successful', () async {
       // arrange
-      when(
-        () => mockUserRepository.registerUser(tUser),
-      ).thenAnswer((_) async => Right(tUser));
+      when(() => mockUserRepository.registerUser(tUser)).thenAnswer((_) async => Right(tUser)); 
 
       // act
       final result = await mockUserRepository.registerUser(tUser);
@@ -57,9 +56,7 @@ void main() {
   group('loginUser', () {
     test('should return User when login is successful', () async {
       // arrange
-      when(
-        () => mockUserRepository.loginUser(tUser),
-      ).thenAnswer((_) async => Right(tUser));
+      when(() => mockUserRepository.loginUser(tUser)).thenAnswer((_) async => Right(tUser));
 
       // act
       final result = await mockUserRepository.loginUser(tUser);
@@ -73,9 +70,7 @@ void main() {
     test('should return Failure when login fails', () async {
       // arrange
       final tFailure = const ServerFailure('Login failed');
-      when(
-        () => mockUserRepository.loginUser(tUser),
-      ).thenAnswer((_) async => Left(tFailure));
+      when(() => mockUserRepository.loginUser(tUser)).thenAnswer((_) async => Left(tFailure));
 
       // act
       final result = await mockUserRepository.loginUser(tUser);
