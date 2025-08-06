@@ -26,3 +26,7 @@ class CacheException extends Failure {
 class ValidationFailure extends Failure {
   const ValidationFailure(super.message);
 }
+class OfflineFailure extends Failure {
+  const OfflineFailure(super.message);
+}
+
