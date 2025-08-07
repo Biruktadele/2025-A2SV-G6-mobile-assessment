@@ -1,9 +1,3 @@
-import 'dart:async';
-import 'package:dartz/dartz.dart';
-import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/annotations.dart';
-import 'package:mockito/mockito.dart';
-
 import 'package:chatting_app/core/error/failure.dart';
 import 'package:chatting_app/core/network/network.dart';
 import 'package:chatting_app/features/auth/data/datasources/local_data/user_local_data_source.dart';
@@ -11,6 +5,10 @@ import 'package:chatting_app/features/auth/data/datasources/remote_data/user_rem
 import 'package:chatting_app/features/auth/data/models/user_model.dart';
 import 'package:chatting_app/features/auth/data/repositories/user_repository_impl.dart';
 import 'package:chatting_app/features/auth/domain/entities/user.dart';
+import 'package:dartz/dartz.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
+import 'package:mockito/mockito.dart';
 
 import 'user_repository_impl_test.mocks.dart';
 

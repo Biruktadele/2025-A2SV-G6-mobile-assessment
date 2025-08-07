@@ -29,6 +29,5 @@ class ValidationFailure extends Failure {
 class OfflineFailure extends Failure {
   const OfflineFailure(super.message);
 }
-class AuthFailure extends Failure {
-  const AuthFailure(super.message);
-}
+
+

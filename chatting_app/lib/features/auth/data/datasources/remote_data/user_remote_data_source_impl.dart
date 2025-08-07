@@ -1,6 +1,7 @@
 import 'dart:convert';
-import 'package:http/http.dart' as http;
+
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:http/http.dart' as http;
 
 import '../../../../../core/utils/constants/api_constant.dart';
 import '../../../domain/entities/user.dart';
@@ -70,7 +71,7 @@ class UserRemoteDataSourceImpl implements UserRemoteDataSource {
       body: jsonEncode(UserModel.fromEntity(user).toLoginJson()),
     );
 
-    if (response.statusCode == 200) {
+    if (response.statusCode == 200 || response.statusCode == 201) {
       final data = jsonDecode(response.body);
       final token = data['token'] as String?;
       if (token == null) {

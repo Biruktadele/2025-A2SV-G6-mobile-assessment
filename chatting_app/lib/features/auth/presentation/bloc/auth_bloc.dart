@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
-import 'package:chatting_app/core/error/failure.dart';
-import 'package:chatting_app/features/auth/domain/entities/user.dart';
-import 'package:chatting_app/features/auth/domain/repositories/user_repository.dart';
+import '../../../../core/error/failure.dart';
+import '../../domain/entities/user.dart';
+import '../../domain/repositories/user_repository.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 
@@ -14,7 +14,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final UserRepository userRepository;
 
 
-  AuthBloc(this.userRepository) : super(AuthInitial()) {
+  AuthBloc(this.userRepository) : super(const AuthInitial()) {
     // on<AuthEvent>(_onAuthEvent);
     // on<CheckToken>(_onCheckToken);
     // on<Getuser>(_onGetuser);
@@ -27,8 +27,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     emit(const AuthLoading());
     try {
   final user = User(
-              id: '',
-              name: '',
               email: event.email,
               password: event.password,
             );
@@ -49,14 +47,12 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     emit(const AuthLoading());
     try {
       final user = User(
-            id: '',
             name: event.name,
             email: event.email,
             password: event.password,
           );
     
-    final userModel = UserModel.fromEntity(user);
-    final result = await userRepository.registerUser(userModel);
+    final result = await userRepository.registerUser(user);
     
     result.fold(
         (failure) => emit(AuthFailure(failure)),

@@ -47,7 +47,7 @@ class UserLocalDataSourceImpl implements UserLocalDataSource {
   Future<String?> getToken() async {
     final token = await flutterSecureStorage.read(key: tokenKey);
     if (token == null) {
-      return throw Exception('Token not found');
+      return null;
     }
     return token;
   }

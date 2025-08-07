@@ -17,7 +17,7 @@ void main() {
   late AuthBloc authBloc;
   late MockUserRepository mockUserRepository;
 
-  final tUser = User(
+  final tUser = const User(
     id: '1',
     name: 'John',
     email: 'john@example.com',
@@ -48,14 +48,14 @@ void main() {
       'emits [AuthLoading, AuthFailure] when LoginUser fails',
       build: () {
         when(mockUserRepository.loginUser(any)).thenAnswer(
-          (_) async => Left(ServerFailure('Login failed')),
+          (_) async => const Left(ServerFailure('Login failed')),
         );
         return authBloc;
       },
       act: (bloc) => bloc.add(const LoginUser('john@example.com', 'wrongpass')),
       expect: () => [
         const AuthLoading(),
-        AuthFailure(ServerFailure('Login failed')),
+        const AuthFailure(ServerFailure('Login failed')),
       ],
     );
 
@@ -77,26 +77,26 @@ void main() {
       'emits [AuthLoading, AuthFailure] when RegisterUser fails',
       build: () {
         when(mockUserRepository.registerUser(any))
-            .thenAnswer((_) async => Left(ServerFailure('Register failed')));
+            .thenAnswer((_) async => const Left(ServerFailure('Register failed')));
         return authBloc;
       },
       act: (bloc) => bloc.add(const RegisterUser('John', 'john@example.com', 'badpass')),
       expect: () => [
         const AuthLoading(),
-        AuthFailure(ServerFailure('Register failed')),
+        const AuthFailure(ServerFailure('Register failed')),
       ],
     );
 
     blocTest<AuthBloc, AuthState>(
       'emits [AuthLoading, AuthSuccess] when LogoutUser is called',
       build: () {
-        when(mockUserRepository.logoutUser()).thenAnswer((_) async => Right(null));
+        when(mockUserRepository.logoutUser()).thenAnswer((_) async => const Right(null));
         return authBloc;
       },
-      act: (bloc) => bloc.add(LogoutUser()),
+      act: (bloc) => bloc.add(const LogoutUser()),
       expect: () => [
         const AuthLoading(),
-        AuthSuccess(User(id: '', name: '', email: '', password: '')),
+        const AuthSuccess(User(id: '', name: '', email: '', password: '')),
       ],
     );
   });

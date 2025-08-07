@@ -18,7 +18,7 @@ void main() {
   late MockFlutterSecureStorage mockSecureStorage;
   
   // Test data
-  final tUser = User(
+  final tUser = const User(
     id: '1',
     name: 'Test User',
     email: 'test@example.com',
