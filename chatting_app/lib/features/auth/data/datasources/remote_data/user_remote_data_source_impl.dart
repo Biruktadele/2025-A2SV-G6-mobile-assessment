@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-import '../../../../../core/constants/api_constant.dart';
+import '../../../../../core/utils/constants/api_constant.dart';
 import '../../../domain/entities/user.dart';
 import '../../models/user_model.dart';
 import 'user_remote_data_source.dart';

@@ -7,7 +7,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:chatting_app/features/auth/data/datasources/remote_data/user_remote_data_source_impl.dart';
 import 'package:chatting_app/features/auth/domain/entities/user.dart';
 import 'package:chatting_app/features/auth/data/models/user_model.dart';
-import 'package:chatting_app/core/constants/api_constant.dart';
+import 'package:chatting_app/core/utils/constants/api_constant.dart';
 
 import 'user_remote_data_source_impl_test.mocks.dart';
 
