@@ -6,8 +6,11 @@ A modern Flutter-based mobile application with user authentication and real-time
 
 | Splash Screen | Login Screen | Sign Up Screen |
 |--------------|--------------|----------------|
-| <img src="chatting_app/images/screenshoots/splash.jpg" width="200"> | <img src="chatting_app/images/screenshoots/login.jpg" width="200"> | <img src="chatting_app/images/screenshoots/signup.jpg" width="200"> |
+<img src="images/screenshoots/splash.jpg" width="300" height="700">
 
+<img src="images/screenshoots/login.jpg" width="300" height="700">
+
+<img src="images/screenshoots/signup.jpg" width="300" height="700">
 ## ✨ Features
 
 ### 🔐 User Authentication
